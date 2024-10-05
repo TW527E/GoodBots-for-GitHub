@@ -33,7 +33,7 @@ The lists are updated daily via a scheduled GitHub Action.
     ├── github-git.ips
     │   IP-Addresses used by the GitHub Git
     │   
-    ├── github-github_enterprise_importer.ips
+    ├── github-enterprise_importer.ips
     │   IP-Addresses used by the GitHub Enterprise Importer
     │   
     ├── github-hooks.ips

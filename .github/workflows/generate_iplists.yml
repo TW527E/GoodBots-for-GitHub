@@ -16,42 +16,42 @@ jobs:
           packages: whois
           version: 1.0
 
-      - name: Generate GitHub hooks IP-List
-        run: curl -s https://api.github.com/meta | jq -r '.hooks[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-hooks.ips
+      - name: Generate GitHub Actions IP-List
+        run: curl -s https://api.github.com/meta | jq -r '.actions[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-actions.ips
  
-      - name: Generate GitHub web IP-List
-        run: curl -s https://api.github.com/meta | jq -r '.web[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-web.ips
- 
-      - name: Generate GitHub api IP-List
+      - name: Generate GitHub API IP-List
         run: curl -s https://api.github.com/meta | jq -r '.api[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-api.ips
  
-      - name: Generate GitHub git IP-List
+      - name: Generate GitHub Codespaces IP-List
+        run: curl -s https://api.github.com/meta | jq -r '.codespaces[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-codespaces.ips
+ 
+      - name: Generate GitHub Copilot IP-List
+        run: curl -s https://api.github.com/meta | jq -r '.copilot[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-copilot.ips
+
+      - name: Generate GitHub Dependabot IP-List
+        run: curl -s https://api.github.com/meta | jq -r '.dependabot[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-dependabot.ips
+ 
+      - name: Generate GitHub Git IP-List
         run: curl -s https://api.github.com/meta | jq -r '.git[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-git.ips
  
-      - name: Generate GitHub github_enterprise_importer IP-List
-        run: curl -s https://api.github.com/meta | jq -r '.github_enterprise_importer[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-github_enterprise_importer.ips
+      - name: Generate GitHub Enterprise Importer IP-List
+        run: curl -s https://api.github.com/meta | jq -r '.github_enterprise_importer[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-enterprise_importer.ips
  
-      - name: Generate GitHub packages IP-List
-        run: curl -s https://api.github.com/meta | jq -r '.packages[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-packages.ips
- 
-      - name: Generate GitHub pages IP-List
-        run: curl -s https://api.github.com/meta | jq -r '.pages[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-pages.ips
+      - name: Generate GitHub Hooks IP-List
+        run: curl -s https://api.github.com/meta | jq -r '.hooks[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-hooks.ips
  
       - name: Generate GitHub importer IP-List
         run: curl -s https://api.github.com/meta | jq -r '.importer[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-importer.ips
  
-      - name: Generate GitHub actions IP-List
-        run: curl -s https://api.github.com/meta | jq -r '.actions[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-actions.ips
+      - name: Generate GitHub Packages IP-List
+        run: curl -s https://api.github.com/meta | jq -r '.packages[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-packages.ips
  
-      - name: Generate GitHub codespaces IP-List
-        run: curl -s https://api.github.com/meta | jq -r '.codespaces[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-codespaces.ips
+      - name: Generate GitHub Pages IP-List
+        run: curl -s https://api.github.com/meta | jq -r '.pages[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-pages.ips
  
-      - name: Generate GitHub dependabot IP-List
-        run: curl -s https://api.github.com/meta | jq -r '.dependabot[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-dependabot.ips
+      - name: Generate GitHub Web IP-List
+        run: curl -s https://api.github.com/meta | jq -r '.web[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-web.ips
  
-      - name: Generate GitHub copilot IP-List
-        run: curl -s https://api.github.com/meta | jq -r '.copilot[] | select( . != null )' | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/iplists/github-copilot.ips
-
       - name: Create merged/total IP-List (all.ips) # Use grep to merge files and ensure proper new-lines between every file, but remove any empty new-lines
         run: grep -h -v '^[[:space:]]*$' $GITHUB_WORKSPACE/iplists/*.ips | uniq -u | $GITHUB_WORKSPACE/.github/scripts/clean_ips.sh > $GITHUB_WORKSPACE/all.ips
 
