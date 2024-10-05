@@ -1,4 +1,4 @@
-# GoodBots
+# GoodBots for GitHub
 Curated lists of IP addresses/whitelists of good bots and crawlers. Includes GoogleBot, BingBot, DuckDuckBot, etc.
 
 All IP-Lists are in the [CIDR-Notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) and can be used as whitelists in your webserver's firewall or as an exception for rate-limits.
@@ -6,7 +6,7 @@ All IP-Lists are in the [CIDR-Notation](https://en.wikipedia.org/wiki/Classless_
 Either use the [all.ips](all.ips) list or a specific service's list of IP-Addresses found in the [iplists/](iplists/) directory.
 
 The lists are updated daily via a scheduled GitHub Action.
-<!-- TODO: Better Readme -->
+
   
 ```
 .
@@ -15,76 +15,40 @@ The lists are updated daily via a scheduled GitHub Action.
 │
 └── iplists/
     │
-    ├── ahrefsbot.ips
-    │   IP-Addresses used by the AhrefsBot Crawler
+    ├── github-actions.ips
+    │   IP-Addresses used by the GitHub Actions
     │   
-    ├── applebot.ips
-    │   Apple doesn't publish its "AppleBot" Crawler IPs, so this list includes all Apple IPs →TODO: Find better solution
+    ├── github-api.ips
+    │   IP-Addresses used by the GitHub API
     │   
-    ├── betteruptimebot.ips
-    │   IP-Addesses used by the BetterUptime Bot
+    ├── github-codespaces.ips
+    │   IP-Addresses used by the GitHub Codespaces
     │   
-    ├── bingbot.ips
-    │   IP-Addesses used by the Bing Crawler
+    ├── github-copilot.ips
+    │   IP-Addresses used by the GitHub Copilot
     │   
-    ├── bunnycdn.ips
-    │   IP-Addesses used by the bunny.net CDN
+    ├── github-dependabot.ips
+    │   IP-Addresses used by the GitHub Dependabot
     │   
-    ├── cloudflare.ips
-    │   IP-Addesses used by the Cloudflare CDN
+    ├── github-git.ips
+    │   IP-Addresses used by the GitHub Git
     │   
-    ├── duckduckbot.ips
-    │   IP-Addesses used by the DuckDuckGo Crawler
+    ├── github-github_enterprise_importer.ips
+    │   IP-Addresses used by the GitHub Enterprise Importer
     │   
-    ├── facebookbot.ips
-    │   IP-Addesses used by the Facebook Link-Preview Bot
+    ├── github-hooks.ips
+    │   IP-Addresses used by the GitHub Hooks
     │   
-    ├── freshpingbot.ips
-    │   IP-Addesses used by the Freshping Bot
+    ├── github-importer.ips
+    │   IP-Addresses used by the GitHub Importer
     │   
-    ├── googlebot.ips
-    │   IP-Addesses used by the Google Crawler
+    ├── github-packages.ips
+    │   IP-Addresses used by the GitHub Packages
     │   
-    ├── imagekit.ips
-    │   IP-Addesses used by the Imagekit.io Image Proxy
-    │   
-    ├── imgix.ips
-    │   IP-Addesses used by the Imgix Image Proxy
-    │   
-    ├── internal.ips
-    │   Internal IP-Addresses
-    │   
-    ├── marginalia.ips
-    │   IP-Addresses used by the Marginalia Search Crawler
-    │   
-    ├── mojeekbot.ips
-    │   IP-Addesses used by the Mojeek Crawler
-    │   
-    ├── molliewebhook.ips
-    │   IP-Addesses used by Mollie to send out Webhooks
-    │   
-    ├── outageowl.ips
-    │   IP-Addesses used by the Outage Owl Bot
-    │   
-    ├── pingdombot.ips
-    │   IP-Addesses used by the Pingdom Bot
-    │   
-    ├── rssapi.ips
-    │   IP-Addesses used by the RSSAPI.net Feed parser
-    │   
-    ├── stripewebhook.ips
-    │   IP-Addesses used by Stripe to send out Webhooks
-    │   
-    ├── telegrambot.ips
-    │   IP-Addesses used by the Telegram Link-Preview Bot
-    │   
-    ├── twitterbot.ips
-    │   IP-Addesses used by the Twitter Link-Preview Bot
+    ├── github-pages.ips
+    │   IP-Addresses used by the GitHub Pages
     │
-    ├── uptimerobot.ips
-    │   IP-Addesses used by UptimeRobot.com
-    │
-    └── webpagetestbot.ips 
-        IP-Addesses used by Webpagetest.org
+    └── github-web.ips 
+        IP-Addresses used by the GitHub Web
         
 ```
