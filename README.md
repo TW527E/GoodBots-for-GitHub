@@ -1,5 +1,5 @@
 # GoodBots for GitHub
-Curated lists of IP addresses/whitelists of good bots and crawlers. Includes GoogleBot, BingBot, DuckDuckBot, etc.
+Curated lists of IP addresses/whitelists of good bots and crawlers. BUT ONLY GITHUB.
 
 All IP-Lists are in the [CIDR-Notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) and can be used as whitelists in your webserver's firewall or as an exception for rate-limits.
 
